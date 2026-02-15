@@ -1,5 +1,12 @@
+import NavbarComponent from "./components/NavbarComponent";
+import HeroComponent from "./components/HeroComponent";
 function App() {
-  return <></>;
+  return (
+    <>
+      <NavbarComponent />
+      <HeroComponent />
+    </>
+  );
 }
 
 export default App;
