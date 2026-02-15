@@ -50,7 +50,7 @@ const HeroComponent = () => {
 
       {/* Decorative Scroll Indicator - Minimalist */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-[1px] h-16 bg-gradient-to-b from-accent to-transparent animate-bounce-slow" />
+        <div className="w-px h-16 bg-linear-to-b from-accent to-transparent animate-bounce-slow" />
       </div>
     </section>
   );
