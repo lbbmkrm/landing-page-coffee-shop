@@ -66,17 +66,35 @@ const NavbarComponent = () => {
               isScrolled ? "text-primary-light" : "text-surface"
             }`}
           >
-            <a href="#home" className="hover:text-accent transition-colors">
-              Home
+            <a
+              href="#home"
+              className="hover:text-accent transition-colors text-sm font-bold uppercase tracking-widest"
+            >
+              Beranda
             </a>
-            <a href="#menu" className="hover:text-accent transition-colors">
-              Menu
+            <a
+              href="#menu"
+              className="hover:text-accent transition-colors text-sm font-bold uppercase tracking-widest"
+            >
+              Daftar Menu
             </a>
-            <a href="#about" className="hover:text-accent transition-colors">
-              About
+            <a
+              href="#about"
+              className="hover:text-accent transition-colors text-sm font-bold uppercase tracking-widest"
+            >
+              Cerita Kami
             </a>
-            <a href="#contact" className="hover:text-accent transition-colors">
-              Contact
+            <a
+              href="#testimonials"
+              className="hover:text-accent transition-colors text-sm font-bold uppercase tracking-widest"
+            >
+              Testimoni
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-accent transition-colors text-sm font-bold uppercase tracking-widest"
+            >
+              Kontak
             </a>
           </div>
           {/* Button & Mobile Toggle */}
@@ -117,30 +135,37 @@ const NavbarComponent = () => {
             <a
               href="#home"
               onClick={closeMobileMenu}
-              className="hover:text-accent transition-colors duration-300 hover:scale-105"
+              className="hover:text-accent transition-colors duration-300 hover:scale-105 font-serif font-bold"
             >
-              Home
+              Beranda
             </a>
             <a
               href="#menu"
               onClick={closeMobileMenu}
-              className="hover:text-accent transition-colors duration-300 hover:scale-105"
+              className="hover:text-accent transition-colors duration-300 hover:scale-105 font-serif font-bold"
             >
-              Menu
+              Daftar Menu
             </a>
             <a
               href="#about"
               onClick={closeMobileMenu}
-              className="hover:text-accent transition-colors duration-300 hover:scale-105"
+              className="hover:text-accent transition-colors duration-300 hover:scale-105 font-serif font-bold"
             >
-              About
+              Cerita Kami
+            </a>
+            <a
+              href="#testimonials"
+              onClick={closeMobileMenu}
+              className="hover:text-accent transition-colors duration-300 hover:scale-105 font-serif font-bold"
+            >
+              Testimoni
             </a>
             <a
               href="#contact"
               onClick={closeMobileMenu}
-              className="hover:text-accent transition-colors duration-300 hover:scale-105"
+              className="hover:text-accent transition-colors duration-300 hover:scale-105 font-serif font-bold"
             >
-              Contact
+              Kontak
             </a>
           </nav>
         </div>

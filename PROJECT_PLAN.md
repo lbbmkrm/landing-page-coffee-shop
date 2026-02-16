@@ -12,28 +12,28 @@ Halo! Sebagai Senior Front-End Developer, saya telah menyusun panduan langkah de
 - [x] **Identifikasi Aset**: Mengumpulkan gambar berkualitas tinggi (menggunakan `generate_image` jika perlu) untuk produk dan latar belakang.
 - [x] **Konfigurasi Global CSS**: Menyiapkan variabel CSS (Custom Properties) untuk konsistensi di `index.css`.
 
-### Fase 2: Struktur Layout & Navigasi
+### Fase 2: Struktur Layout & Navigasi (Selesai ✅)
 
-- [ ] **Global Layout**: Membuat pembungkus utama (main container).
-- [ ] **Responsive Navbar**: Navigasi yang elegan dengan efek _sticky_ atau _transparent-to-solid_ saat scroll.
+- [x] **Global Layout**: Membuat pembungkus utama (main container).
+- [x] **Responsive Navbar**: Navigasi yang elegan dengan efek _sticky_ atau _transparent-to-solid_ saat scroll.
 
-### Fase 3: Pengembangan Section Utama
+### Fase 3: Pengembangan Section Utama (Selesai ✅)
 
-- [ ] **Hero Section**: Membuat impresi pertama yang kuat dengan headline yang memikat, gambar berkualitas tinggi, dan tombol FAQ/Call to Action.
-- [ ] **About Section**: Penjelasan singkat mengenai filosofi kopi atau sejarah kedai.
-- [ ] **Menu Showcase**: Menampilkan daftar kopi unggulan dengan desain kartu (_card selection_) yang modern.
-- [ ] **Features/Values Section**: Mengapa pelanggan harus memilih kedai ini (misal: Biji kopi pilihan, Barista ahli).
+- [x] **Hero Section**: Membuat impresi pertama yang kuat dengan headline yang memikat, gambar berkualitas tinggi, dan tombol FAQ/Call to Action.
+- [x] **About Section**: Penjelasan singkat mengenai filosofi kopi atau sejarah kedai.
+- [x] **Menu Showcase**: Menampilkan daftar kopi unggulan dengan desain kartu (_card selection_) yang modern.
+- [x] **Features/Values Section**: Mengapa pelanggan harus memilih kedai ini (Integrasi ke dalam About & Menu).
 
-### Fase 4: Interaksi & Review Pelanggan
+### Fase 4: Interaksi & Review Pelanggan (Selesai ✅)
 
-- [ ] **Testimonials**: Menampilkan kritik/saran dari pelanggan dengan desain grid atau slider yang halus.
-- [ ] **Footer**: Informasi kontak, jam operasional, dan link sosial media.
+- [x] **Testimonials**: Menampilkan kritik/saran dari pelanggan dengan desain grid atau slider yang halus.
+- [x] **Footer**: Informasi terakhir, hak cipta, dan link tambahan.
 
-### Fase 5: Polish & Optimasi (Final)
+### Fase 5: Polish & Optimasi (Final - Selesai ✅)
 
-- [ ] **Mikro-interaksi**: Menambahkan animasi halus (hover effects, scroll animations).
-- [ ] **Responsive Design**: Memastikan tampilan sempurna di mobile, tablet, dan desktop.
-- [ ] **Optimasi Performa**: Memastikan aset gambar teroptimasi untuk loading cepat.
+- [x] **Mikro-interaksi**: Menambahkan animasi halus (hover effects, scroll animations).
+- [x] **Responsive Design**: Memastikan tampilan sempurna di mobile, tablet, dan desktop.
+- [x] **Optimasi Performa**: Memastikan aset gambar teroptimasi untuk loading cepat.
 
 ---
 

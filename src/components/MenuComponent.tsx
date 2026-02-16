@@ -33,12 +33,16 @@ const MenuComponent = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-8 py-3 font-bold transition-all border ${
+              className={`px-10 py-4 font-bold transition-all duration-300 border uppercase tracking-widest text-xs relative overflow-hidden ${
                 activeCategory === cat
-                  ? "bg-primary text-surface border-primary"
-                  : "border-primary/10 text-primary hover:border-primary"
+                  ? "bg-primary text-surface border-primary shadow-xl translate-y-[-2px]"
+                  : "bg-background border-primary/10 text-text-muted hover:border-primary/30 hover:text-primary hover:bg-surface hover:shadow-md"
               }`}
             >
+              {/* Subtle indicator dot for active state */}
+              {activeCategory === cat && (
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-accent" />
+              )}
               {cat}
             </button>
           ))}
