@@ -2,6 +2,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import HeroComponent from "./components/HeroComponent";
 import AboutComponent from "./components/AboutComponent";
 import MenuComponent from "./components/MenuComponent";
+import TestimonialsComponent from "./components/TestimonialsComponent";
 function App() {
   return (
     <>
@@ -9,6 +10,7 @@ function App() {
       <HeroComponent />
       <AboutComponent />
       <MenuComponent />
+      <TestimonialsComponent />
     </>
   );
 }

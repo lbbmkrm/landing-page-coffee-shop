@@ -96,6 +96,21 @@ section {
   animation: bounce-slow 4s ease-in-out infinite;
 }
 
-.animate-fade-in {
-  animation: fade-in-up 0.8s ease-out forwards;
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
