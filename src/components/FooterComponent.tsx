@@ -1,8 +1,24 @@
-import { Instagram, Music2, MessageCircle, ArrowUp } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Music2, MessageCircle, ArrowUp, Check } from "lucide-react";
 
 const FooterComponent = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) return;
+
+    setStatus("loading");
+    // Simulasi API call
+    setTimeout(() => {
+      setStatus("success");
+      setEmail("");
+    }, 1500);
   };
 
   return (
@@ -14,13 +30,15 @@ const FooterComponent = () => {
             <div className="text-3xl font-serif font-bold tracking-tight">
               CAFE<span className="text-accent">AURA</span>
             </div>
-            <p className="text-surface/50 max-w-sm leading-relaxed text-lg italic font-light">
+            <p className="text-surface/50 max-w-sm leading-relaxed text-lg italic font-light text-pretty">
               "Karena kopi bukan sekadar rasa, tapi cerita tentang dedikasi dan
               kehangatan di setiap seduhan."
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 border border-surface/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-500 group"
               >
                 <Instagram
@@ -29,7 +47,9 @@ const FooterComponent = () => {
                 />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 border border-surface/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-500 group"
               >
                 <Music2
@@ -38,7 +58,9 @@ const FooterComponent = () => {
                 />
               </a>
               <a
-                href="#"
+                href="https://wa.me/628123456789"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 border border-surface/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-500 group"
               >
                 <MessageCircle
@@ -54,7 +76,7 @@ const FooterComponent = () => {
             <h4 className="text-accent uppercase font-bold tracking-[0.3em] text-xs">
               Navigasi
             </h4>
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-4 font-bold uppercase tracking-widest text-xs">
               {[
                 "Beranda",
                 "Daftar Menu",
@@ -83,16 +105,39 @@ const FooterComponent = () => {
                 Dapatkan info promo spesial dan update menu terbaru langsung di
                 emailmu.
               </p>
-              <div className="relative group">
+              <form onSubmit={handleSubscribe} className="relative group">
                 <input
                   type="email"
-                  placeholder="Email Anda"
-                  className="w-full bg-surface/5 border border-surface/10 px-6 py-4 outline-none focus:border-accent transition-all text-sm"
+                  required
+                  placeholder={
+                    status === "success" ? "Terima Kasih!" : "Email Anda"
+                  }
+                  value={email}
+                  disabled={status !== "idle"}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={`w-full bg-surface/5 border border-surface/10 px-6 py-4 outline-none focus:border-accent transition-all text-sm disabled:opacity-50 ${
+                    status === "success"
+                      ? "border-accent text-accent placeholder:text-accent"
+                      : ""
+                  }`}
                 />
-                <button className="absolute right-2 top-2 bottom-2 bg-accent text-primary px-4 font-bold text-xs uppercase hover:bg-accent-light transition-all">
-                  Kirim
+                <button
+                  type="submit"
+                  disabled={status !== "idle"}
+                  className="absolute right-2 top-2 bottom-2 bg-accent text-primary px-4 font-bold text-xs uppercase hover:bg-accent-light transition-all disabled:opacity-50 flex items-center justify-center min-w-[70px]"
+                >
+                  {status === "idle" && "Kirim"}
+                  {status === "loading" && (
+                    <div className="w-5 h-5 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+                  )}
+                  {status === "success" && <Check size={18} />}
                 </button>
-              </div>
+              </form>
+              {status === "success" && (
+                <p className="text-accent text-[10px] uppercase font-bold tracking-widest animate-fade-in">
+                  ✓ Anda telah terdaftar
+                </p>
+              )}
             </div>
           </div>
         </div>

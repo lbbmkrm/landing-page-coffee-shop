@@ -2,6 +2,14 @@ import { ArrowRight } from "lucide-react";
 import HeroLatte from "../assets/hero-latte.png";
 
 const HeroComponent = () => {
+  const handleBooking = () => {
+    const dummyNumber = "628123456789";
+    const message = encodeURIComponent(
+      "Halo CAFE AURA, saya ingin booking tempat. Apakah masih tersedia meja untuk hari ini?",
+    );
+    window.open(`https://wa.me/${dummyNumber}?text=${message}`, "_blank");
+  };
+
   return (
     <section
       id="home"
@@ -25,9 +33,9 @@ const HeroComponent = () => {
               Nikmati Kopi Pilihan • Sejak 2024
             </span>
 
-            <h1 className="text-5xl md:text-8xl text-surface font-serif leading-tight">
+            <h1 className="text-5xl md:text-8xl text-surface font-serif leading-tight text-balance">
               Bikin Tiap Momen <br />
-              Jadi <span className="italic">Lebih Bermakna</span>
+              Jadi <span className="italic uppercase">Bermakna</span>
             </h1>
 
             <p className="text-surface/80 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide">
@@ -38,19 +46,20 @@ const HeroComponent = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <button className="bg-accent px-10 py-5 text-primary font-bold flex items-center justify-center gap-3 hover:bg-accent-light transition-all shadow-2xl">
+            <a
+              href="#menu"
+              className="bg-accent px-10 py-5 text-primary font-bold flex items-center justify-center gap-3 hover:bg-accent-light transition-all shadow-2xl"
+            >
               Lihat Menu <ArrowRight size={20} />
-            </button>
-            <button className="px-10 py-5 font-bold text-surface border border-surface/30 hover:bg-surface hover:text-primary transition-all backdrop-blur-sm">
+            </a>
+            <button
+              onClick={handleBooking}
+              className="px-10 py-5 font-bold text-surface border border-surface/30 hover:bg-surface hover:text-primary transition-all backdrop-blur-sm"
+            >
               Booking Tempat
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Decorative Scroll Indicator - Minimalist */}
-      <div className="md:absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-px h-16 bg-linear-to-b from-accent to-transparent animate-bounce-slow" />
       </div>
     </section>
   );
