@@ -56,8 +56,8 @@ const ContactComponent = () => {
                   Lokasi
                 </h4>
                 <p className="text-surface/60 text-base leading-relaxed mb-8">
-                  Jl. Senopati Raya No. 12, <br />
-                  Kebayoran Baru, Jakarta Selatan
+                  Jl. ExampleStreet, No. 123 <br />
+                  ExampleCity, ExampleCountry
                 </p>
               </div>
               <a

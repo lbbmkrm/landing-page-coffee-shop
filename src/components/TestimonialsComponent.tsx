@@ -73,14 +73,6 @@ const TestimonialsComponent = () => {
         <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
       </div>
-
-      <div className="hidden md:flex container-custom mt-16  justify-center">
-        <div className="flex items-center gap-4 text-text-muted text-sm italic">
-          <span className="w-12 h-px bg-primary/10" />
-          Arahkan kursor untuk menjeda guliran
-          <span className="w-12 h-px bg-primary/10" />
-        </div>
-      </div>
     </section>
   );
 };

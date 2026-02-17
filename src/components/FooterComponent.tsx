@@ -145,7 +145,7 @@ const FooterComponent = () => {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-surface/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-surface/30 text-xs tracking-widest uppercase">
-            © 2026 CAFE AURA. Dibuat dengan cinta untuk pecinta kopi.
+            © 2026 CAFE AURA. Dibuat dengan kafein untuk pecinta kopi.
           </p>
 
           <button
