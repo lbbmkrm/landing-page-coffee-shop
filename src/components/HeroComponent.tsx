@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import HeroLatte from "../assets/hero-latte.png";
 
 const HeroComponent = () => {
@@ -26,7 +27,12 @@ const HeroComponent = () => {
       </div>
 
       {/* Content - Centered & Sharp */}
-      <div className="relative z-10 container-custom text-center animate-fade-in">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 container-custom text-center animate-fade-in"
+      >
         <div className="flex flex-col items-center space-y-8">
           <div className="space-y-4">
             <span className="text-accent uppercase tracking-[0.3em] font-bold text-sm block">
@@ -60,7 +66,7 @@ const HeroComponent = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

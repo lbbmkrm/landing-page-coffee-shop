@@ -78,18 +78,33 @@ const FooterComponent = () => {
             </h4>
             <nav className="flex flex-col space-y-4 font-bold uppercase tracking-widest text-xs">
               {[
-                "Beranda",
-                "Daftar Menu",
-                "Cerita Kami",
-                "Testimoni",
-                "Kontak",
-              ].map((item) => (
+                {
+                  name: "Beranda",
+                  href: "#home",
+                },
+                {
+                  name: "Daftar Menu",
+                  href: "#menu",
+                },
+                {
+                  name: "Cerita Kami",
+                  href: "#about",
+                },
+                {
+                  name: "Testimoni",
+                  href: "#testimonials",
+                },
+                {
+                  name: "Kontak",
+                  href: "#contact",
+                },
+              ].map((item: { name: string; href: string }) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "")}`}
+                  key={item.name}
+                  href={item.href}
                   className="text-surface/60 hover:text-accent transition-colors duration-300 w-fit"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </nav>

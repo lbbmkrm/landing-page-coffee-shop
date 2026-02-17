@@ -1,10 +1,16 @@
 import AboutManualBrew from "../assets/about-manual-brew.jpg";
+import { motion } from "framer-motion";
 const AboutComponent = () => {
   return (
-    <section id="about" className="bg-background scroll-mt-20">
+    <section id="about" className="bg-background scroll-mt-20 overflow-hidden">
       <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
         {/* Sisi Kiri: Visual dengan efek Offset */}
-        <div className="relative group">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative group"
+        >
           {/* Kotak dekoratif di belakang (Aksen Emas) */}
           <div className="absolute -top-6 -left-6 w-full h-full border-2 border-accent/20 -z-10 group-hover:top-0 group-hover:left-0 transition-all duration-500" />
 
@@ -23,10 +29,15 @@ const AboutComponent = () => {
               Tahun Pengalaman
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Sisi Kanan: Konten Teks */}
-        <div className="space-y-8">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-8"
+        >
           <div className="space-y-4">
             <span className="text-accent font-bold uppercase tracking-widest text-sm">
               Cerita Di Balik Layar
@@ -59,7 +70,7 @@ const AboutComponent = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

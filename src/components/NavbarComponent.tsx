@@ -125,7 +125,7 @@ const NavbarComponent = () => {
           {/* Close Button di atas */}
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-6 right-6 text-primary-light hover:text-accent transition-colors duration-300"
+            className="absolute top-6 right-6 text-surface hover:text-accent transition-colors duration-300"
           >
             <X size={32} />
           </button>

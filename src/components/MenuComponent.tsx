@@ -1,7 +1,29 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { coffeeData, foodMenuData, nonCoffeeData } from "../data/MenuData";
 
 const menuData = [...coffeeData, ...nonCoffeeData, ...foodMenuData];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 const MenuComponent = () => {
   const [activeCategory, setActiveCategory] = useState("Kopi");
@@ -16,7 +38,7 @@ const MenuComponent = () => {
     <section id="menu" className="bg-surface py-20 lg:py-32">
       <div className="container-custom">
         {/* Header Section */}
-        <div className="text-center space-y-4 mb-16 animate-fade-in">
+        <div className="text-center space-y-4 mb-16">
           <span className="text-accent uppercase font-bold tracking-[0.3em] text-sm">
             Pilihan Terbaik
           </span>
@@ -49,10 +71,19 @@ const MenuComponent = () => {
         </div>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <motion.div
+          // key={activeCategory} for force re-animation
+          key={activeCategory}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
           {filteredMenu.map((item) => (
-            <div
+            <motion.div
               key={item.id}
+              variants={itemVariants}
               className="group cursor-pointer border border-transparent hover:border-primary/5 p-4 transition-all duration-300"
             >
               <div className="relative overflow-hidden aspect-square">
@@ -84,9 +115,9 @@ const MenuComponent = () => {
                   {new Intl.NumberFormat("id-ID").format(item.price)}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

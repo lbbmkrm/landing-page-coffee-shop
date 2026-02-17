@@ -6,8 +6,28 @@ import {
   Instagram,
   ExternalLink,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ContactComponent = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
   return (
     <section
       id="contact"
@@ -37,14 +57,22 @@ const ContactComponent = () => {
             </h2>
             <p className="text-surface/50 text-lg md:text-xl font-light max-w-xl leading-relaxed">
               Mampir yuk, pintu kami selalu terbuka untuk secangkir
-              kebahagiaanmu di tengah hiruk pikuk Senopati.
+              kebahagiaanmu di tengah hiruk pikuk kota.
             </p>
           </div>
 
-          {/* Info Grid - Glassmorphism Style */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Info Grid */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {/* Location Card */}
-            <div className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full">
+            <motion.div
+              variants={cardVariants}
+              className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full"
+            >
               <div>
                 <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
                   <MapPin
@@ -68,10 +96,13 @@ const ContactComponent = () => {
               >
                 Petunjuk Jalan <ExternalLink size={14} />
               </a>
-            </div>
+            </motion.div>
 
             {/* Hours Card */}
-            <div className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full">
+            <motion.div
+              variants={cardVariants}
+              className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full"
+            >
               <div>
                 <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
                   <Clock
@@ -98,10 +129,13 @@ const ContactComponent = () => {
               <p className="text-surface/30 text-[10px] uppercase tracking-[0.2em] pt-8">
                 Pemesanan terakhir: 30 menit sebelum tutup
               </p>
-            </div>
+            </motion.div>
 
             {/* Social & Contact Card */}
-            <div className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full">
+            <motion.div
+              variants={cardVariants}
+              className="bg-surface/5 backdrop-blur-md p-10 border border-surface/10 hover:border-accent/50 transition-all duration-500 group flex flex-col justify-between h-full"
+            >
               <div>
                 <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
                   <Phone
@@ -114,13 +148,15 @@ const ContactComponent = () => {
                 </h4>
                 <div className="space-y-4">
                   <a
-                    href="tel:+62211234567"
+                    href="https://wa.me/628123456789"
+                    target="_blank"
                     className="block text-surface/70 hover:text-accent transition-colors text-lg"
                   >
-                    +62 21 1234 567
+                    +62 812 3456 789
                   </a>
                   <a
                     href="mailto:halo@cafeaura.id"
+                    target="_blank"
                     className="block text-surface/70 hover:text-accent transition-colors text-lg"
                   >
                     halo@cafeaura.id
@@ -129,20 +165,22 @@ const ContactComponent = () => {
               </div>
               <div className="flex gap-4 pt-10">
                 <a
-                  href="#"
+                  href="https://www.instagram.com"
+                  target="_blank"
                   className="w-10 h-10 border border-surface/10 flex items-center justify-center text-surface/60 hover:bg-accent hover:text-primary transition-all"
                 >
                   <Instagram size={18} />
                 </a>
                 <a
-                  href="#"
+                  href="https://mail.google.com"
+                  target="_blank"
                   className="w-10 h-10 border border-surface/10 flex items-center justify-center text-surface/60 hover:bg-accent hover:text-primary transition-all"
                 >
                   <Mail size={18} />
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
