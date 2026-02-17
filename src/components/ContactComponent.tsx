@@ -7,7 +7,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { motion } from "framer-motion";
-
+import caffeeInterior from "../assets/caffe-interior.jpg";
 const ContactComponent = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,9 +36,9 @@ const ContactComponent = () => {
       {/* Cinematic Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000&auto=format&fit=crop"
+          src={caffeeInterior}
           alt="Cafe Interior"
-          className="w-full h-full object-cover opacity-20 grayscale brightness-50"
+          className="w-full h-full ml-100 object-cover opacity-20 grayscale brightness-50"
         />
         {/* Dark Gradient Overlay for Readability */}
         <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/90 to-transparent" />

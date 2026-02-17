@@ -165,7 +165,7 @@ const FooterComponent = () => {
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-3 text-accent hover:text-surface transition-colors group"
+            className="hidden  md:flex items-center gap-3 text-accent hover:text-surface transition-colors group"
           >
             <span className="text-[10px] uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
               Kembali ke Atas
